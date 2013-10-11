@@ -10,7 +10,7 @@
 
 preferences {
   section("Change to this mode to...") {
-    input "newMode", "mode", metadata:[values:["Away","Home"]]
+    input "newMode", "mode", metadata:[values:["Away", "Home"]]
   }
 
   section("Change these thermostats modes...") {
@@ -19,14 +19,14 @@ preferences {
 }
 
 def installed() {
-	subscribe(location, changeMode)
-	subscribe(app, changeMode)
+  subscribe(location, changeMode)
+  subscribe(app, changeMode)
 }
 
 def updated() {
-	unsubscribe()
-	subscribe(location, changeMode)
-	subscribe(app, changeMode)
+  unsubscribe()
+  subscribe(location, changeMode)
+  subscribe(app, changeMode)
 }
 
 def changeMode(evt) {
