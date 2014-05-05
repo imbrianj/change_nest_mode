@@ -2,11 +2,21 @@
  *  Change Nest Mode
  *
  *  Author: brian@bevey.org
- *  Date: 9/25/13
+ *  Date: 5/5/14
  *
  *  Simply marks any thermostat "away" if able (primarily focused on the Nest
  *  thermostat).  This is intended to be used with an "Away" or "Home" mode.
  */
+
+definition(
+    name:        "Change Nest Mode",
+    namespace:   "ImBrian",
+    author:      "brian@bevey.org",
+    description: "Simply marks any thermostat 'away' if able (primarily focused on the Nest thermostat).  This is intended to be used with an 'Away' or 'Home' mode.",
+    category:    "Green Living",
+    iconUrl:     "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience.png",
+    iconX2Url:   "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience%402x.png"
+)
 
 preferences {
   section("Change to this mode to...") {
@@ -31,10 +41,12 @@ def updated() {
 
 def changeMode(evt) {
   if(newMode == "Away") {
+    log.info("Marking Away")
     thermostats?.away()
   }
 
   else {
+    log.info("Marking Present")
     thermostats?.present()
   }
 }
