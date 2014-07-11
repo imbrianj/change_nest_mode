@@ -10,7 +10,7 @@
 
 definition(
     name:        "Change Nest Mode",
-    namespace:   "ImBrian",
+    namespace:   "imbrianj",
     author:      "brian@bevey.org",
     description: "Simply marks any thermostat 'away' if able (primarily focused on the Nest thermostat).  This is intended to be used with an 'Away' or 'Home' mode.",
     category:    "Green Living",
