@@ -25,11 +25,8 @@ definition(
 
 preferences {
   section() {
-    input "newMode", "mode", title: "If SmartThings changes to...", multiple: true, required: true
-  }
-
-  section("Then change these thermostats modes...") {
-    input "thermostats", "capability.thermostat", multiple: true
+    input "awayMode", "mode", title: "If SmartThings changes to", required: true
+    input "thermostats", "capability.thermostat", title: "then set these themostats to Away","multiple: true
   }
 }
 
@@ -45,7 +42,7 @@ def updated() {
 }
 
 def changeMode(evt) {
-  if(newMode == "Away") {
+  if(location.currentMode == "awayMode") {
     log.info("Marking Away")
     thermostats?.away()
   }
