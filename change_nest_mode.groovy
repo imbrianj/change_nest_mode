@@ -9,8 +9,8 @@
  */
 
 definition(
-    name:        "Change Nest Mode",
-    namespace:   "change_nest_mode",
+    name:        "change_nest_mode",
+    namespace:   "xenokira",
     author:      "nathaniel.pitts@gmail.com",
     description: "Simply marks any thermostat 'away' if able (primarily focused on the Nest thermostat).  This is intended to be used with an 'Away' or 'Home' mode.",
     category:    "Green Living",
