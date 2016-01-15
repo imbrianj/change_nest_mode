@@ -10,8 +10,8 @@
 
 definition(
     name:        "Change Nest Mode",
-    namespace:   "imbrianj",
-    author:      "brian@bevey.org",
+    namespace:   "change_nest_mode",
+    author:      "nathaniel.pitts@gmail.com",
     description: "Simply marks any thermostat 'away' if able (primarily focused on the Nest thermostat).  This is intended to be used with an 'Away' or 'Home' mode.",
     category:    "Green Living",
     iconUrl:     "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience.png",
