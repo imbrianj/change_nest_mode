@@ -4,10 +4,13 @@
  *  Author: brian@bevey.org
  *  Date: 5/5/14
  *
- *  THIS THIS IS S ATEST!!!
- * This is a second test.
  *  Simply marks any thermostat "away" if able (primarily focused on the Nest
  *  thermostat).  This is intended to be used with an "Away" or "Home" mode.
+ * 
+ *  Change log:
+ *  2016.01.15
+ *      * Manually moved to personal repository for better integration with SmartThings.
+ *  
  */
 
 definition(
@@ -21,11 +24,11 @@ definition(
 )
 
 preferences {
-  section("Change to this mode to...") {
-    input "newMode", "mode", metadata:[values:["Away", "Home"]]
+  section() {
+    input "newMode", "mode", title: "If SmartThings changes to...", multiple: true, required: true
   }
 
-  section("Change these thermostats modes...") {
+  section("Then change these thermostats modes...") {
     input "thermostats", "capability.thermostat", multiple: true
   }
 }
