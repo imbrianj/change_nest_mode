@@ -47,12 +47,11 @@ def updated() {
 def changeMode(evt) {
   def curMode = location.currentMode
   log.debug("New SmartThings mode is ${curMode.name}")
+  
   if(awayMode.contains(curMode.name)) {
     log.info("Changing thermostat mode to Away")
     thermostats?.away()
-  }
-
-  else {
+  } else {
     log.info("Changing thermostat mode to Home")
     thermostats?.present()
   }
