@@ -42,13 +42,16 @@ def updated() {
 }
 
 def changeMode(evt) {
-  if(location.currentMode == "awayMode") {
+  def curMode = location.currentMode
+  if(curMode.name == "awayMode") {
+    log.debug("Current mode is ${curMode.name}")
     log.info("Marking Away")
     thermostats?.away()
   }
 
   else {
     log.info("Marking Present")
+    log.debug("Current mode is ${curMode.name}")
     thermostats?.present()
   }
 }
