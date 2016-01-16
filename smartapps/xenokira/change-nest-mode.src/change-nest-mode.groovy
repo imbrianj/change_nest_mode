@@ -26,7 +26,7 @@ definition(
 preferences {
   section() {
     input "awayMode", "mode", title: "If SmartThings changes to", required: true
-    input "thermostats", "capability.thermostat", title: "then set these themostats to Away","multiple: true
+    input "thermostats", "capability.thermostat", title: "then set these themostats to Away", multiple: true
   }
 }
 
