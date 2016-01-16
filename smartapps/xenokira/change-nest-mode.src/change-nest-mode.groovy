@@ -7,11 +7,11 @@
  *  Simply marks any thermostat "away" if able (primarily focused on the Nest
  *  thermostat).  This is intended to be used with an "Away" or "Home" mode.
  * 
- *  Change log:
- *  2016.01.15
- *      * Manually moved to personal repository for better integration with SmartThings.
- *		* Allow multiple "away modes" to determine thermostat away mode (Home, Vacation, etc...)
- *      * Cleaned up strings.
+ *  Changes:
+ *  2016.01.15  xenokira
+ *  Manually moved to personal repository for better integration with SmartThings.
+ *	Allow multiple "away modes" to trigger thermostat away mode (Home, Vacation, etc...)
+ *  Cleaned up strings.
  *  
  */
 
