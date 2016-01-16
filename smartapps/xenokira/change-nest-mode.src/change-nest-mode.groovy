@@ -10,8 +10,9 @@
  * 
  *  Changes:
  *  2016.01.15  xenokira
- *  Manually moved to personal repository for better integration with SmartThings.
- *  Allow multiple "away modes" to trigger thermostat away mode (Home, Vacation, etc...)
+ *  Forked to add features
+ *  Changed directory moved in repository for better integration with SmartThings.
+ *  Added ability to select multiple modes to trigger thermostat away mode (Home, Vacation, etc...)
  *  Cleaned up strings.
  *  
  */
