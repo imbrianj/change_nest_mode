@@ -18,7 +18,7 @@
 
 definition(
     name:        "Change Nest Mode",
-    namespace:   "imbrianj",
+    namespace:   "xenokira",
     author:      "brian@bevey.org & nathaniel.pitts@gmail.com",
     description: "Simply marks any thermostat 'away' if able (primarily focused on the Nest thermostat). This is intended to be used with any SmartThings mode that represents 'Away'.",
     category:    "Green Living",
