@@ -10,13 +10,15 @@
  *  Change log:
  *  2016.01.15
  *      * Manually moved to personal repository for better integration with SmartThings.
+ *		* Allow multiple "away modes" to determine thermostat away mode (Home, Vacation, etc...)
+ *      * Cleaned up strings.
  *  
  */
 
 definition(
     name:        "Change Nest Mode",
-    namespace:   "xenokira",
-    author:      "nathaniel.pitts@gmail.com",
+    namespace:   "imbrianj",
+    author:      "brian@bevey.org & nathaniel.pitts@gmail.com",
     description: "Simply marks any thermostat 'away' if able (primarily focused on the Nest thermostat).  This is intended to be used with an 'Away' or 'Home' mode.",
     category:    "Green Living",
     iconUrl:     "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience.png",
@@ -25,8 +27,8 @@ definition(
 
 preferences {
   section() {
-    input "awayMode", "mode", title: "If SmartThings changes to", required: true
-    input "thermostats", "capability.thermostat", title: "then set these themostats to Away", multiple: true
+    input "awayMode", "mode", title: "If SmartThings changes to", required: true, multiple: true
+    input "thermostats", "capability.thermostat", title: "then set these themostats to Away", required: true, multiple: true
   }
 }
 
@@ -43,15 +45,14 @@ def updated() {
 
 def changeMode(evt) {
   def curMode = location.currentMode
-  if(curMode.name == awayMode) {
-    log.debug("Current mode is ${curMode.name}")
-    log.info("Marking Away")
+  log.debug("New SmartThings mode is ${curMode.name}")
+  if(awayMode.contains(curMode.name)) {
+    log.info("Changing thermostat mode to Away")
     thermostats?.away()
   }
 
   else {
-    log.info("Marking Present")
-    log.debug("Current mode is ${curMode.name}")
+    log.info("Changing thermostat mode to Home")
     thermostats?.present()
   }
 }
